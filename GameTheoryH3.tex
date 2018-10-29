@@ -1,0 +1,105 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\begin{document}
+\bibliographystyle{unsrt} 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+%\renewcommand{\qedsymbol}{\filledbox}
+ 
+\title{Game Theory and the Internet Application Assignment3}%replace X with the appropriate number
+\author{Chen Zhao (118033910098)\\
+Xuanxuan Huang (118033910065)\\
+Xuancheng Jin (118033910066)}
+ 
+\maketitle
+
+\section{Problem-1 Residency Matching with couples}
+In theory, stable match in residency matching problem with constrains such as couples is not guaranteed.So there maybe no stable match in the problem in theory.\\
+e.g. If there is a couple $c_1\ \&\ c_2$ , a single student $s$, and 2 hospital $H_1\ \&\  H_2$. Their preference are shown below:
+\begin{itemize}
+    \item $H_1: c_1, s$
+    \item $H_2: s, c_2$
+    \item $c_1 \& c_2:H_1, H_2$ and they want to be in the same hospital.
+    \item $s:H_1, H_2$
+\end{itemize}
+In this case, there is no stable match that can fit the problem. In hospital proposing DA, the couple will not receive proposal from the same hospital. In doctor proposing DA, $H_1$ will reject $c_2$'s proposal.Also, the changing of NRMP algorithm fails to find a stable match on data of American Residency Matching in 1993, 1994 and 1995 and makes little difference in finding a better matching.\cite{roth1997effects}
+\\
+However, according to research of Kojima, along with increasing of market size, the probability of existence of stable match converges to one.\cite{kojima2009incentives}This means that there is more likely to exist a stable match when market grows faster than the number of couples.
+\\
+Therefore, there may not exist a stable match in NRMP with a fair number of married couples. But with the growth of matching market, the possibility of no stable match becomes smaller and smaller.
+
+\section{Problem-2 School Choice Strategy}
+School Choice is a widely discussed problem in education which means giving students opportunity to choose school instead of being assigned to a school by their district.\cite{abdulkadirouglu2003school}There are plenty of school choice mechanism. We will introduce some of the most common mechanisms in detail.
+\subsection{Boston Student Assignment Mechanism}
+Boston student assignment mechanism is a direct mechanism and was first used in Boston in July, 2009. Some variants of the Boston mechanism are also used in other states or cities in USA. The Boston student assignment mechanism works as below:
+\begin{enumerate}
+    \item Students submit their ranking order list(ROL) of the school.
+    \item For each school, a priority ranking is determined by follows:
+    \begin{itemize}
+        \item First priority: Having sibling in the school and being inside of walk area of the school.
+        \item Second priority: Having sibling in the school.
+        \item Third priority: Being inside of walk area of the school.
+        \item Forth priority: Rest of students.
+    \end{itemize}
+    And students in the same priority are randomly ordered by lotteries given to them previously.
+    \item Assign students based on their preferences and priorities. In each $k^{th}$ of assignment mechanism, only $k^{th}$ choices of students are considers and the assignment will be given to students who have not being chosen in previous round. Once being assigned, the assignment of students can't be canceled.
+\end{enumerate}
+The major problem of the Boston student assignment mechanism is that it is not strategy proof.
+Even if a student has very high priority at school s, unless he/she lists it as his/her top choice, he/she
+loses the priority to students who have listed s as their top choices. Under this mechanism, one strategy for student is to better estimate his/her priority and choose the school which he/she has the highest priority.
+\subsection{Columbus Student Assignment Mechanism}
+This assignment mechanism is not a direct mechanism and is used in Columbus City School District.It works as below:
+\begin{enumerate}
+    \item Each student can apply to 3 different school at most.
+    \item Some school guarantee that assignment will be given to students who live in their regular assignment area and the priority among remaining applicants is determined by a random lottery. The rest of schools determined priority of applications randomly.
+    \item For each school, available seats are offered to students with the highest priority by a lottery office and the rest of applications are put in a waiting list. After receiving an offer, student have 3 days to decide whether to accept it and will be removed from waiting list. If he/she accept it, the student will be given a seat and must decline other offer. Then the lottery office will give offer to students on the waiting lists when seats become available because of declining of offers.
+\end{enumerate}
+Like Boston mechanism, the optimal strategy is also unknown.One strategy for student is to at least apply for one school which can guarantee a seat to him/her if such school exits
+\subsection{College Entrance Exam in China}
+In China, when high school students want to apply for university, most of them need to participant a national examination called College Entrance Exam. All the university obey the same preference on the basis of students' grade of College. Take Guandong as an example, it works as below:
+\begin{enumerate}
+    \item 
+\end{enumerate}
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+
+
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\bibliography{HW3Ref.bib}
+\end{document}
+
